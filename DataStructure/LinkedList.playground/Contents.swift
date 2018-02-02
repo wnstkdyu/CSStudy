@@ -2,6 +2,12 @@
 
 import Foundation
 
+// LinkedList
+// Array의 삽입, 삭제 시 나머지 원소들의 인덱스 변화 문제점을 해결하기 위해 나온 자료구조
+// 삽입, 삭제만 놓고 보았을 때 다음 노드만 변경하면 되어 O(1) 시간! 그러나...
+// Search에도 O(n)이 걸리기 때문에 결과적으로 원하는 위치에 삽입, 삭제할 경우 O(n)이 걸린다.
+// Tree 구조의 근간이 되는 자료구조
+
 class Node {
     let data: Int
     var next: Node?
