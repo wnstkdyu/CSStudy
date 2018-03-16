@@ -170,7 +170,7 @@ func solve() -> Int {
 
 ## 4. 셔틀버스(난이도: 중)
 
-입력으로 들어오는 시간 형태의 문재열 배열을 잘 Parse하는 것이 중요하고 분을 더하거나 뺄 때 `나머지 연산`을 통해 값을 구하는 것이 포인트이다.
+입력으로 들어오는 시간 형태의 문재열 배열을 잘 `파싱`하는 것이 중요하고 분을 더하거나 뺄 때 `나머지 연산`을 통해 값을 구하는 것이 포인트이다.
 
 많은 경우의 수가 있어 고려해야 할 것을 놓치는 어려운 문제 같다.
 
@@ -303,6 +303,9 @@ func solve(n: Int, t: Int, m: Int, timeTable: [String]) -> String {
 ```
 
 ## 5. 뉴스 클러스터링(난이도: 중)
+
+`Set`를 이용해서 교집합, 합집합을 구하는 것이 포인트인 것 같다. 특수문자, 공백, 숫자를 제거하는 법도 알아두면 두고두고 쓰일 것이다.
+
 ``` Swift
 func solution(str1: String, str2: String) -> Int {
     // 1,2. 다중 집합을 만든 후 정렬한다.
@@ -358,5 +361,113 @@ func makeMultipleArray(str: String) -> [String] {
     ansArray = ansArray.filter { $0 == $0.filter{ $0 >= "a" && $0 <= "z" }}
 
     return ansArray
+}
+```
+
+## 6. 프렌즈4블록(난이도: 상)
+
+2중 배열로 주변의 것들까지 검색해야 하기 때문에 얼마나 빠르게 구현하는지가 관건일 것 같다.
+
+``` Swift
+func solution(m: Int, n: Int, board: [String]) -> Int {
+    // 1. 블록들을 각각의 자리에 배치
+    var blockArr: [[String]] = {
+        var blockArr: [[String]] = Array(repeating: [], count: m)
+
+        for i in board.indices {
+            for str in board[i] {
+                blockArr[i].append(String(str))
+            }
+        }
+
+        return blockArr
+    }()
+
+    var count = 0
+    // 2. 배열을 순회하며 체크한다.
+    while checkArr(arr: blockArr).1 != 0 {
+        let result = checkArr(arr: blockArr)
+
+        blockArr = result.0
+        count += result.1
+    }
+
+    return count
+}
+
+func checkArr(arr: [[String]]) -> ([[String]] ,Int) {
+    var set: [(Int, Int)] = []
+
+    for i in 0..<arr.count {
+        let floor = arr[i]
+        for j in 0..<floor.count {
+            let block = floor[j]
+
+            // 위에서부터 밑에 부분만 계속 체크해 나가기
+            guard i + 1 < arr.count && j + 1 < floor.count else {
+                break
+            }
+
+            guard block != "" else { continue }
+
+            let rightBlock = arr[i][j + 1]
+            let underBlock = arr[i + 1][j]
+            let rightUnderBlock = arr[i + 1][j + 1]
+
+            guard block == rightBlock && block == underBlock && block == rightUnderBlock else {
+                continue
+            }
+
+            // 기존 set에 인덱스가 없다면 담기
+            if !set.contains(where: { $0.0 == i && $0.1 == j }) {
+                set.append((i, j))
+            }
+            if !set.contains(where: { $0.0 == i && $0.1 == j + 1 }) {
+                set.append((i, j + 1))
+            }
+            if !set.contains(where: { $0.0 == i + 1 && $0.1 == j }) {
+                set.append((i + 1, j))
+            }
+            if !set.contains(where: { $0.0 == i + 1 && $0.1 == j + 1 }) {
+                set.append((i + 1, j + 1))
+            }
+        }
+    }
+
+    var arr = arr
+    // 원래 배열에서 블록들을 제거한다.
+    for i in 0..<arr.count {
+        let floor = arr[i]
+
+        for j in 0..<floor.count {
+            // (i, j)가 set에 들었으면 string을 ""로 바꿔준다.
+            guard set.contains(where: { $0.0 == i && $0.1 == j }) else {
+                continue
+            }
+
+            arr[i][j] = ""
+        }
+    }
+
+    // 제거된 배열에서 존재하는 빈 공간을 없앤다.
+    for i in 0..<arr.count {
+        let floor = arr[i]
+
+        for j in 0..<floor.count {
+            // 빈 공간을 체크한다.
+            guard floor[j] == "" else { continue }
+
+            // 빈 공간이면 위에 존재하는 것을 체크해 있으면 바로 넣어준다.
+            for k in 0..<i {
+                let checkIndex = i - 1 - k
+                if arr[checkIndex][j] != "" {
+                    arr[i][j] = arr[checkIndex][j]
+                    arr[checkIndex][j] = ""
+                }
+            }
+        }
+    }
+
+    return (arr, set.count)
 }
 ```
