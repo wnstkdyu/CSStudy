@@ -1,5 +1,16 @@
 # Java 유용한 기술
 
+## 입력 받기
+`java.util.Scanner`를 import하여 Scanner클래스를 사용한다.
+
+``` java
+Scanner scanner = new Scanner(System.in);
+
+String inputString = scanner.nextLine();
+int inputNum = scanner.nextInt();
+double inputDouble = scanner.nextDouble();
+```
+
 ## 문자열이 숫자인지 판별하는 방법
 
 ```java
