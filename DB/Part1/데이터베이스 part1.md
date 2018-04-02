@@ -7,7 +7,7 @@
 ### 관련 용어
 
 - DB(Database): 데이터들의 모임
-- DBMS(Database Management Software): 데이터베이스를 관리하는 소프트웨어로 `data independence`. `data sharing`, `recovery`, `security` 등 효과적인 기능을 제공한다.
+- DBMS(Database Management Software): 데이터베이스를 관리하는 소프트웨어로 `data independence`, `data sharing`, `recovery`, `security` 등 효과적인 기능을 제공한다.
 - DBS(Database System): DB + DBMS
 
 ### DBMS의 이점
@@ -31,6 +31,16 @@
 
 운영체제에서 제공하는 것으로 **이론적으로는** 사용자가 데이터를 관리 가능. 그러나 사용자가 많은 기능들을 직접 구현해야 하기 때문에 DBMS를 사용하는 것이 낫다.
 
+#### 파일 시스템 vs 데이터베이스
+
+|  <center></center> |  <center>파일 시스템</center> |  <center>데이터베이스</center> |
+|:--------|:--------:|--------:|
+|**속도** | <center>상대적으로 빠르다</center> |<center> 상대적으로 느리다 </center> |
+|**비용** | <center>저렴하다</center> |<center>비싸다</center> |
+|**개발 생산성** | <center>기대하기 어렵다</center> |<center>보장된다(표준 SQL, 개발기간 절감, 운영비용 절감)</center>|
+
+또한, **자료의 중복 방지**, **데이터 무결성 보장**에서 데이터베이스가 이점이 있다.
+
 ### 스키마와 인스턴스
 
 - `스키마(Schema)`: 타입
@@ -46,7 +56,7 @@
 - Logical level: 데이터 사이의 관계. `스키마`를 정의한다.
 - View level: 사용자가 보는 데이터를 제한하는 것. **보안**의 목적을 띈다.
 
-Three-schema Architecture
+**Three-schema Architecture**
 
 ![](images/threelevel.png)
 
@@ -78,7 +88,7 @@ Three-schema Architecture
 ### Attributes
 
 - 속성의 값을 모두 모은 것은 `domain`
-- 속성값은 **원자적(indivisible)**이어야 함.
+- 속성값은 **원자적**(**indivisible**)이어야 함.
 - 기본값(default)으로 `null`값을 가진다.
 
 ### Order is immaterial
@@ -95,10 +105,11 @@ Three-schema Architecture
 
 ### 참조 무결성 제약
 
-`관계형 모델`에서만 나오는 제약으로 데이터의 관계가 `값(value)`에 의해서 이루어지기 때문에 나오는 제약.
+`관계형 모델`에서만 나오는 제약으로 데이터의 관계가 `값(value)`에 의해서 이루어지기 때문에 나오는 제약. 참조 관계일 경우 함부로 지울 수 없다.
 
 ---
 
 ## Reference
 
 - [데이터 베이스 강의 - 숭실대학교 이상호 교수님](http://www.kocw.net/home/search/kemView.do?kemId=1132753)
+- [[데이터베이스 기초] 데이터베이스의 개념, 파일시스템과 비교](http://neokido.tistory.com/entry/데이터베이스-기초-데이터베이스의-개념-파일시스템과-비교)
