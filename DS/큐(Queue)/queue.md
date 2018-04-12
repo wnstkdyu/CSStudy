@@ -74,6 +74,10 @@ before   [ "Ada", "Steve", "Tim", "Grace", xxx, xxx ]
 after   [ "Steve", "Tim", "Grace", xxx, xxx, xxx ]
 ```
 
+## 큐를 이용한 추천 예제
+
+- 큐로 Heap 구현하기
+
 ## References
 
 - [Queue - Swift Algorithm Club](https://github.com/raywenderlich/swift-algorithm-club/blob/master/Queue/README.markdown)
