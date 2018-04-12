@@ -14,6 +14,6 @@
 - [숭실대 KOCW 데이터베이스 강의 - 이상호 교수님](http://www.kocw.net/home/search/kemView.do?kemId=1132753) 수강.
 - 정리한 것을 마크다운 파일로 정리.
 
-## [Network]()
+## [Network](https://github.com/wnstkdyu/CSStudy/tree/master/Network)
 - [이화여대 KOCW 컴퓨터 네트워크 강의 - 이미정 교수님](http://www.kocw.net/home/search/kemView.do?kemId=1046412) 수강.
 - 정리한 것을 마크다운 파일로 정리.
