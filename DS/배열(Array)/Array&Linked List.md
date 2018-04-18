@@ -4,16 +4,16 @@
 배열의 한계는 메모리를 낭비할 가능성이 있다는 것이다.
 ``` Java
 public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		String[] languageArray = {"Swift", "Java", "Objective-C", "Python", "C"};
+	// TODO Auto-generated method stub
+	String[] languageArray = {"Swift", "Java", "Objective-C", "Python", "C"};
 
-		// 인덱스로 O(1) 시간에 바로 접근.
-		System.out.println(languageArray[2]); // Objective-C
-		languageArray[2] = null;
+	// 인덱스로 O(1) 시간에 바로 접근.
+	System.out.println(languageArray[2]); // Objective-C
+	languageArray[2] = null;
 
-		// 연속적인 형태가 아니기 때문에 빈 공간으로 남게 됨.
-		System.out.println(languageArray[2]); // null
-	}
+	// 연속적인 형태가 아니기 때문에 빈 공간으로 남게 됨.
+	System.out.println(languageArray[2]); // null
+}
 ```
 배열은 인덱스에 따라서 값을 유지하기 때문에 빈 공간을 메꿔주지 않는다. null 값을 이용하거나 고정된 갯수의 값들을 유지해야 할 경우 배열을 사용하지만 많은 경우에 한계가 있을 것이다. 이러한 단점을 보완한 것이 `List` 자료구조이다.
 
@@ -32,16 +32,16 @@ List의경우 3번 인덱스의 값이 40에서 50으로 바뀌고 4번 인덱�
 
 ``` Java
 public static void main(String[] args) {
-  // TODO Auto-generated method stub
-  String[] languageArray = {"Swift", "Java", "Objective-C", "Python", "C"};
-  ArrayList<String> languageList = new ArrayList<String>(Arrays.asList(languageArray));
+	// TODO Auto-generated method stub
+	String[] languageArray = {"Swift", "Java", "Objective-C", "Python", "C"};
+	ArrayList<String> languageList = new ArrayList<String>(Arrays.asList(languageArray));
 
-  // 마찬가지로 index로 바로 접근이 가능하다.
-  System.out.println(languageList.get(2)); // Objective-C
+	// 마찬가지로 index로 바로 접근이 가능하다.
+	System.out.println(languageList.get(2)); // Objective-C
 
-  // 삭제 후에는 인덱스가 바뀐다.
-  languageList.remove(2);
-  System.out.println(languageList.get(2)); // Python
+	// 삭제 후에는 인덱스가 바뀐다.
+	languageList.remove(2);
+	System.out.println(languageList.get(2)); // Python
 }
 
 ```
