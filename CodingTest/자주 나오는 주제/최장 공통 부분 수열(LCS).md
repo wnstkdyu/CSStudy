@@ -1,6 +1,4 @@
-# 자주 나오는 주제
-
-## LCS(최장 공통 부분 수열)
+# LCS(최장 공통 부분 수열)
 공통 부분 수열 중 **길이가 가장 긴** 부분 수열을 찾는 문제
 
 `최적의 부분구조`와 겹치는 `부분문제 특성`을 가지기 때문에 점화식을 통해 푸는 `동적 프로그래밍`이라는 기법을 사용할 수 있다. 이 방법은 부분문제의 해답을 표에 저장하는 방식인 `메모이제이션`을 사용해 상위 단계의 부분문제에서 해답을 접근한다.
@@ -37,7 +35,7 @@
 
 이런 식으로 표가 만들어 지는데, 여기서 젤 마지막 칸인 `(E, T)`가 LCS의 길이가 된다. 최장 공통 부분 문자열은 대각선 방향으로 바뀐 지점을 캐치해 구한다.
 
-### Java 코드
+## Java 코드
 
 ``` Java
 public static String LCS(String str1, String str2) {
@@ -85,7 +83,7 @@ public static String LCS(String str1, String str2) {
   return new StringBuilder(ans).reverse().toString();
 }
 ```
-### Swift 코드
+## Swift 코드
 
 ``` Swift
 func LCS(str1: String, str2: String) -> String {
