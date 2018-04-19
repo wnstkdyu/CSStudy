@@ -1,9 +1,10 @@
 # 알파카 CS 공부
 컴퓨터 공학 기초 공부를 위한 리포지터리입니다.
 
-## CodingTest
+## [CodingTest](https://github.com/wnstkdyu/CSStudy/tree/master/CodingTest)
+- 언어: Java
 - 그동안 나온 기출 문제와 [Codewars](https://www.codewars.com)을 중심으로 정리.
-- [강수](https://github.com/oaksong)님과 [Hackerrank](https://www.hackerrank.com/domains/algorithms) 알고리즘 문제를 5개씩 풀기. 
+- [강수](https://github.com/oaksong)님과 [Hackerrank](https://www.hackerrank.com/domains/algorithms) 알고리즘 문제를 일주일에 5개씩 풀기. 
 
 ## [OS](https://github.com/wnstkdyu/CSStudy/tree/master/OS) / [DS](https://github.com/wnstkdyu/CSStudy/tree/master/DS) / Algorithm
 - [강수](https://github.com/oaksong)님과 스터디.
@@ -17,3 +18,6 @@
 ## [Network](https://github.com/wnstkdyu/CSStudy/tree/master/Network)
 - [이화여대 KOCW 컴퓨터 네트워크 강의 - 이미정 교수님](http://www.kocw.net/home/search/kemView.do?kemId=1046412) 수강.
 - 정리한 것을 마크다운 파일로 정리.
+
+그 외 부족한 개념은 [Technical Interview Guidelines for beginners
+ 리포](https://github.com/JaeYeopHan/Interview_Question_for_Beginner)를 참고.
