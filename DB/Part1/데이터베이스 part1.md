@@ -2,15 +2,15 @@
 
 `데이터베이스(Database)`는 대용량의 데이터를 관리하는 것으로 구조화/비구조화된 데이터들을 효과적으로 다룰 수 있게 한다.
 
-## 1장 서론
+# 1장 서론
 
-### 관련 용어
+## 관련 용어
 
 - DB(Database): 데이터들의 모임
 - DBMS(Database Management Software): 데이터베이스를 관리하는 소프트웨어로 `data independence`, `data sharing`, `recovery`, `security` 등 효과적인 기능을 제공한다.
 - DBS(Database System): DB + DBMS
 
-### DBMS의 이점
+## DBMS의 이점
 
 - 데이터 추상화: 복잡한 데이터를 단순하게 표현.
 - 데이터에 쉽게 접근
@@ -27,11 +27,11 @@
 - 데이터 보안
 - 데이터 백업과 복원
 
-### 파일 시스템(File System)
+## 파일 시스템(File System)
 
 운영체제에서 제공하는 것으로 **이론적으로는** 사용자가 데이터를 관리 가능. 그러나 사용자가 많은 기능들을 직접 구현해야 하기 때문에 DBMS를 사용하는 것이 낫다.
 
-#### 파일 시스템 vs 데이터베이스
+### 파일 시스템 vs 데이터베이스
 
 |  <center></center> |  <center>파일 시스템</center> |  <center>데이터베이스</center> |
 |:--------|:--------:|--------:|
@@ -41,12 +41,12 @@
 
 또한, **자료의 중복 방지**, **데이터 무결성 보장**에서 데이터베이스가 이점이 있다.
 
-### 스키마와 인스턴스
+## 스키마와 인스턴스
 
 - `스키마(Schema)`: 타입
 - `인스턴스(Instance)`: 타입의 실체적인 값
 
-### 추상화(Abstraction)
+## 추상화(Abstraction)
 
 복잡한 문제를 겉가지들을 쳐내고 **단순화**하여 **본질적**인 것을 다루게끔 하는 기법. **추상화 레벨**을 다르게 하여 문제를 다양한 시선에서 볼 수 있다.
 
@@ -62,7 +62,7 @@
 
 세 레벨의 스키마로 나뉘어져 있기 때문에 `데이터 독립성(Data independence)`을 제공한다. 이것은 **다른 레벨의 스키마에 변경 사항을 적용시키지 않는 특성**이다.
 
-### 데이터 모델(Data Model)
+## 데이터 모델(Data Model)
 
 데이터 추상화를 제공하는 도구, 상세.
 
@@ -70,14 +70,14 @@
 - Object RDM: 객체 지향 개념을 도입해 표현력이 크다.
 - XML: 웹 데이터를 표현하는 형식.
 
-### Database Users
+## Database Users
 
 - Naive users: 일반 사용자(ex. 은행 창구 직원).
 - Application programmers
 - Database analysts
 - Database administrator (DBA)
 
-## 2장 RDB Model(관계형 모델)
+# 2장 RDB Model(관계형 모델)
 
 `관계(relation)`의 `set`과 `제약(constraint)`의 `set`으로로 표현되는 모델. 우리가 흔히 보는 `테이블`의 모습을 띄고 있다.
 
@@ -85,25 +85,25 @@
 - `tuple` = record, row
 - `attribute` = column
 
-### Attributes
+## Attributes
 
 - 속성의 값을 모두 모은 것은 `domain`
 - 속성값은 **원자적**(**indivisible**)이어야 함.
 - 기본값(default)으로 `null`값을 가진다.
 
-### Order is immaterial
+## Order is immaterial
 
 - `관계` 간 순서는 없다.
 - `tuple`의 순서는 중요하지 않다.
 
-### Keys
+## Keys
 
 - 슈퍼 키(super key): `유일성`을 만족하는 속성 또는 속성드의 집합.
 - 후보 키(candidate key): `유일성`과 `최소성`을 만족하는 속성 또는 속성들의 집합.
 - 기본 키(primary key): 후보키 중 `기본적`으로 사용하기 위한 키.
 - 외래 키(foreign key): 다른 릴레이션의 **기본 키를 참조**하는 속성 또는 속성들의 집합.
 
-### 참조 무결성 제약
+## 참조 무결성 제약
 
 `관계형 모델`에서만 나오는 제약으로 데이터의 관계가 `값(value)`에 의해서 이루어지기 때문에 나오는 제약. 참조 관계일 경우 함부로 지울 수 없다.
 
