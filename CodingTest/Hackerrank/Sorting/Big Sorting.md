@@ -1,4 +1,4 @@
-# Big Sorting
+# [Big Sorting](https://www.hackerrank.com/challenges/big-sorting/problem)
 기본적인 정렬 문제이다. 매우 큰 숫자가 주어지기 때문에 시간을 유의해야 한다.
 
 ## 생각한 방법

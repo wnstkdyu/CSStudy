@@ -1,4 +1,4 @@
-# The Full Counting Sort
+# [The Full Counting Sort](https://www.hackerrank.com/challenges/countingsort4/problem)
 입력값으로 정수, 그리고 처음 입력 받은 갯수 만큼 (정수, 문자열)이 들어온다. 이 중 반은 문자열이 "-"로 대체되고 그 다음 튜플의 정수부분이 인덱스가 되어 정렬이 된다. 이 때 들어온 순서는 지켜져야 한다. 정렬된 것들을 출력한다.
 
 ## 생각한 방법

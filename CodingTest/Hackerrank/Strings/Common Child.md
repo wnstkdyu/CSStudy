@@ -1,4 +1,4 @@
-# Common Child
+# [Common Child](https://www.hackerrank.com/challenges/common-child/problem)
 최장 공통 부분 수열을 구하는 문제로 Dynamic Programming 기법을 사용한다. 이차원 배열을 완성해 나가는 식으로 진행하며 만약 문자열을 구하고 싶으면 배열의 뒷부분부터 대각선으로 증가하는 부분을 캐치해서 문자열을 완성해나가면 된다.
 
 ## 생각한 방법

@@ -1,4 +1,4 @@
-# Sherlock and the Valid String
+# [Sherlock and the Valid String](https://www.hackerrank.com/challenges/sherlock-and-valid-string/problem)
 문자열 s가 주어지고 s 안의 알파벳의 갯수가 모두 같으면 valid, 아니면 invalid하다. 이 때 하나의 알파벳을 지울 수 있는데, 이 때 검사를 해도 결과가 나오도록 한다.
 
 예를 들어 abcd는 valid, abcdd도 valid이다.

@@ -1,4 +1,4 @@
-# Fraudulent Activity Notifications
+# [Fraudulent Activity Notifications](https://www.hackerrank.com/challenges/fraudulent-activity-notifications/problem)
 n일 중 한 날의 소비가 d일 만큼의 과거 기록의 median 값의 두 배가 넘는 날의 갯수를 찾는 문제.
 
 ## 생각한 방법
