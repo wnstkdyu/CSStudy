@@ -40,7 +40,6 @@ public class MergeSort {
 		int j = q + 1;
 		
 		int[] tempArr = new int[arr.length];
-		System.out.println(tempArr.length);
 		
 		int k = p;
 		

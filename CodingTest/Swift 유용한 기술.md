@@ -6,6 +6,46 @@ let inputString = readLine()
 ```
 readLine() 함수로 입력을 받을 수 있으며 `String?`을 리턴하므로 `옵셔널 언래핑`을 해줘야 한다.
 
+### 추가적 기술
+``` Swift
+// http://qiita.com/y_mazun/items/dc2a0cad8da1c0e88a40
+extension String: Collection {} // to enable String.split()
+
+func readInput() -> Int {
+    return readLine().flatMap { Int($0) }!
+}
+
+func readInput() -> [Int] {
+    return readLine().flatMap { $0.split(separator: " ").flatMap { Int($0)} }!
+}
+
+func readInput() -> (Int, Int) {
+    let inputs = readInput() as [Int]
+    return (inputs[0], inputs[1])
+}
+
+func readInput() -> Double {
+    return readLine().flatMap { Double($0) }!
+}
+
+func readInput() -> [Double] {
+    return readLine().flatMap { $0.split(separator: " ").flatMap { Double($0)} }!
+}
+
+func readInput() -> (Double, Double) {
+    let inputs = readInput() as [Double]
+    return (inputs[0], inputs[1])
+}
+
+func readInput() -> String {
+    return readLine()!
+}
+
+func readInput() -> [String] {
+    return readLine().flatMap { $0.split(separator: " ") }!
+}
+```
+
 ## String 쪼개기
 입력 받은 String을 쪼개는 방법이다.
 
