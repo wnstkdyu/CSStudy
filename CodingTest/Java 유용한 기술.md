@@ -73,8 +73,8 @@ public static boolean isNumeric(String s) {
 ## 문자열 마지막을 자르는 방법
 ```java
 if (str.length() > 0) {
-			str = str.substring(0, str.length() - 1);
-		}
+  str = str.substring(0, str.length() - 1);
+}
 ```
 문자열이 비어 있는지 먼저 체크해준 뒤, 마지막을 자른다.
 
