@@ -41,7 +41,8 @@ turn은 임계 영역으로 진입할 순번을 나타낸다. 즉 자기 turn인
 do {
   flag[i] = TRUE; // Pi가 깃발을 들어 임계 영역에 들어가고 싶다는 의사를 밝힌다.
   turn = j; // 차례를 Pj에게 넘긴다.
-  while (flag[j] && turn == j); // Pj가 깃발을 들고 있고 Pj의 차례라면 기다린다. 다시 말해 Pj가 깃발을 내렸거나 Pj 차례가 아니라면 Pi가 들어간다.
+  while (flag[j] && turn == j); // Pj가 깃발을 들고 있고 Pj의 차례라면 기다린다.
+  // 다시 말해 Pj가 깃발을 내렸거나 Pj 차례가 아니라면 Pi가 들어간다.
 
   // 임계 영역
 
@@ -72,7 +73,8 @@ boolean lock = false;
 ```c
 Boolean TestAndSet(boolean *target) {
   boolean rv = *target; // read
-  * target = true; // set
+  *target = true; // set
+
   return rv;
 }
 
@@ -153,7 +155,7 @@ void V(semaphore *S) {
 }
 ```
 
-기존의 세마포어 S와 새로운 방식의 세마포어 S.value는 의미하는 바가 다르다. 카운팅 세마포어 방식에서 변수 S는 실제 가용한 자원의 개수를 나타냈지만, block & wakeup 방식에서의 S.value는 지금 자원을 사용할 수 있느냐 없느냐의 의미가 더 크다. 즉 value가 양수이면 사용할 자원이 있으므로 `block()` 또는 `wakeup(P)`할 필요가 없다. 하지만 value가 음수라면 자원을 기다리는 문제 때문에 sleep 큐를 통한 중재가 필요할 것이다.
+기존의 세마포어 S와 새로운 방식의 세마포어 S.value는 의미하는 바가 다르다. 카운팅 세마포어 방식에서 변수 S는 실제 가용한 자원의 개수를 나타냈지만, **block & wakeup 방식에서의 S.value는 지금 자원을 사용할 수 있느냐 없느냐의 의미가 더 크다. 즉 value가 양수이면 사용할 자원이 있으므로 `block()` 또는 `wakeup(P)`할 필요가 없다**. 하지만 value가 음수라면 자원을 기다리는 문제 때문에 sleep 큐를 통한 중재가 필요할 것이다.
 
 ## 교착상태(Deadlock)와 기아(Starvation)
 
