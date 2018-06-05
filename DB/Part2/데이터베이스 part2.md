@@ -9,8 +9,20 @@
 기능의 관점에서 보면 3가지 종류로 나뉠 수 있다.
 
 - DDL(Data-definition language): **스키마를 정의**하는 기능. `Data dictionary`에 스키마의 설정 값들을 테이블의 형태로 저장한다.
+  - CREATE: 정의
+  - ALTER: 수정
+  - DROP: 삭제
+  - TRUNCATE: DROP 후 CREATE
 - DML(Data-manipulation language): 데이터 인스턴스를 검색하고 조작하는 기능. `Query language`라고도 한다.
+  - SELECT: 조회
+  - INSERT: 추가
+  - DELETE: 삭제
+  - UPDATE: 변경
 - DCL(Data-control language): 위의 두개에 속하지 않는 기능들을 제공.
+  - COMMIT: 트랜잭션의 작업 결과를 반영
+  - ROLLBACK: 트랜잭션의 작업을 취소 및 원래대로 복구
+  - GRANT: 사용자에게 권한 부여
+  - REVOKE: 사용자 권한 회수
   - Translation Start / End
   - Session Start / End
   - Backup / Recovery
