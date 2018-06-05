@@ -8,7 +8,7 @@
 
 기능의 관점에서 보면 3가지 종류로 나뉠 수 있다.
 
-- DDL(Data-definition language): 스키마를 정의하는 기능. `Data dictionary`에 스키마의 설정 값들을 테이블의 형태로 저장한다.
+- DDL(Data-definition language): **스키마를 정의**하는 기능. `Data dictionary`에 스키마의 설정 값들을 테이블의 형태로 저장한다.
 - DML(Data-manipulation language): 데이터 인스턴스를 검색하고 조작하는 기능. `Query language`라고도 한다.
 - DCL(Data-control language): 위의 두개에 속하지 않는 기능들을 제공.
   - Translation Start / End
