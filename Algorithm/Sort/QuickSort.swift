@@ -5,18 +5,15 @@
 func quickSort(array: [Int]) -> [Int] {
     guard !array.isEmpty else { return [] }
     
-    var varArray: [Int] = array
-    let pivot = varArray.remove(at: 0)
+    let pivot = array[0]
     
-    return quickSort(array: varArray.filter {$0 <= pivot} ) + [pivot] + quickSort(array: varArray.filter{$0 > pivot})
+    return quickSort(array: varArray.filter{$0 <= pivot}) + [pivot] + quickSort(array: varArray.filter{$0 > pivot})
 }
 
-// 제네릭 버전
 func quickSort<T: Comparable>(array: [T]) -> [T] {
     guard !array.isEmpty else { return [] }
     
-    var varArray: [T] = array
-    let pivot = varArray.remove(at: 0)
+    let pivot = array[0]
     
-    return quickSort(array: varArray.filter { $0 <= pivot }) + [pivot] + quickSort(array: varArray.filter { $0 > pivot })
+    return quickSort(array: array.filter { $0 <= pivot }) + [pivot] + quickSort(array: array.filter { $0 > pivot })
 }
