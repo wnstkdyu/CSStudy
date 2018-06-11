@@ -4,15 +4,13 @@
 // 출처: http://minsone.github.io/programming/quick-sort-in-swift
 func quickSort(array: [Int]) -> [Int] {
     guard !array.isEmpty else { return [] }
-    
     let pivot = array[0]
     
-    return quickSort(array: varArray.filter{$0 <= pivot}) + [pivot] + quickSort(array: varArray.filter{$0 > pivot})
+    return quickSort(array: array.filter{ $0 <= pivot }) + [pivot] + quickSort(array: array.filter{ $0 > pivot })
 }
 
 func quickSort<T: Comparable>(array: [T]) -> [T] {
     guard !array.isEmpty else { return [] }
-    
     let pivot = array[0]
     
     return quickSort(array: array.filter { $0 <= pivot }) + [pivot] + quickSort(array: array.filter { $0 > pivot })
